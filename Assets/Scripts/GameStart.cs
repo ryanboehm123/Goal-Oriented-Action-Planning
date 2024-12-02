@@ -11,15 +11,10 @@ public class GameStart : MonoBehaviour
 
     void Start()
     {
-        float randomX = Random.Range(-transform.localScale.x + 0.5f, transform.localScale.x - 0.5f);
-        float randomZ = Random.Range(-transform.localScale.z + 0.5f, transform.localScale.z - 0.5f);
+        player.transform.position = new Vector3(Random.Range(-7.0f, 7.0f), 1, Random.Range( 0.5f,  9.5f));
+        ball.transform.position =   new Vector3(Random.Range(-7.0f, 7.0f), 1, Random.Range(-0.5f, -9.5f));
 
-        Vector3 newPosition = new Vector3(randomX, player.transform.position.y, randomZ);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Instantiate(ball);
+        Instantiate(player);
     }
 }
