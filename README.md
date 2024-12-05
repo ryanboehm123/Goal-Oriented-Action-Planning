@@ -2,7 +2,7 @@
 
 Goal-Oriented Action Planning (GOAP) is an AI technique that is used to determine how a character should act and behave in order to achieve a goal or set of goals. This technique is especially helpful in games where a character might have to track a lot of information and change behaviors based on the information they know, like stealth games. Our job as the programmer is to determine what information the characters need to track and how to shift between behaviors in order to achieve their current goal or goals.
 
-## Why are Goal-Oriented Behaviors useful?
+## Why is GOAP useful?
 
 GOAP allows characters to behave in specific ways that correlate to the goals we've set out for them. By combining all the information ___For example, let's say we have a character whose favorite sports team just lost. This character would be sad and we can use GOAP to have them act sad, such as placing a rain cloud above their head and have them move around slouching over. As another example, let's say one of our characters needs to go shopping at a specific time. We can have a GOAP setup to have them act normally, but the moment that time comes, they head to the store.
 
@@ -10,7 +10,7 @@ We can also combine these two scenarios. Let's say this character needs to go to
 
 GOAP allow for characters to have multiple goals and behaviors and iterate between them to determine what goals are most beneficial to them, what goals are possible for them to do, or how they should act based on how they feel. 
 
-## How do GOAP function?
+## How does GOAP function?
 
 GOAP have a list of goals and actions that the character can perform and we assign each goal an action that will satisfy that goal, then we perform the actions in order to satisfy the goals. In order to determine which action to perform first, we can use weights in order to determine which goal the character is most interested in satisfying.
 
