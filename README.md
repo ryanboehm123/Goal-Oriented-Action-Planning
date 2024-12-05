@@ -4,11 +4,11 @@ Goal-Oriented Action Planning (GOAP) is an AI technique that is used to determin
 
 ## Why is GOAP useful?
 
-GOAP allows characters to behave in specific ways that correlate to the goals we've set out for them. By combining all the information ___For example, let's say we have a character whose favorite sports team just lost. This character would be sad and we can use GOAP to have them act sad, such as placing a rain cloud above their head and have them move around slouching over. As another example, let's say one of our characters needs to go shopping at a specific time. We can have a GOAP setup to have them act normally, but the moment that time comes, they head to the store.
+GOAP allows characters to behave in specific ways that correlate to the goals we've set out for them. By combining all the information that we are having the character track, we can determine a behavior for that character that would best their needs and goals. Let's take the example below.
 
-We can also combine these two scenarios. Let's say this character needs to go to the store but they are also sad. The GOAP will determine how they act. If they are too sad to go to the store, they might choose to not go despite the fact that they made plans to go. If they end up going to the store anyway, they might still act sad while at the store. These examples are very basic ideas for GOAP that probably don't need GOAP implementation to pull off, but in scenarios where a character might have 50 or so goals, it will be incredibly helpful to implement this concept.
 
-GOAP allow for characters to have multiple goals and behaviors and iterate between them to determine what goals are most beneficial to them, what goals are possible for them to do, or how they should act based on how they feel. 
+
+This is a very basic exmaple, but the red player piece has two pieces of information that it is tracking: position of itself in respect to the ball and whether or not the ball has been kicked. The player's goal is to kick the ball into the goal. At the start of the simulation, the player is far away from the ball and cannot kick it, thus we give it the behavior to move toward the ball. Once this behavior gets the player within range of the ball, we shift it's behavior to have it hit the ball into the net. By doing this, we have satisfied the player's goals.
 
 ## How does GOAP function?
 
