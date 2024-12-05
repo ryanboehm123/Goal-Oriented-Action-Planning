@@ -1,18 +1,18 @@
-# Goal-Oriented Behaviors
+# Goal-Oriented Action Planning
 
-Goal-Oriented Behavior (GOB) is an AI technique that is used to determine how a character should act and behave based on the goals of the character and their current mood. In many games like the Sims, this technique is incredibly helpful because it allows for a character to have multiple different actions they can take. Our job as the programmer is to determine what action best suits the character at a given time.
+Goal-Oriented Action Planning (GOAP) is an AI technique that is used to determine how a character should act and behave based on the goals of the character and their current mood. In many games like the Sims, this technique is incredibly helpful because it allows for a character to have multiple different actions they can take. Our job as the programmer is to determine what action best suits the character at a given time.
 
 ## Why are Goal-Oriented Behaviors useful?
 
-GOBs allow characters to behave in specific ways that correlate to how they feel or what would most benefit them. For example, let's say we have a character whose favorite sports team just lost. This character would be sad and we can use GOB to have them act sad, such as placing a rain cloud above their head and have them move around slouching over. As another example, let's say one of our characters needs to go shopping at a specific time. We can have a GOB setup to have them act normally, but the moment that time comes, they head to the store.
+GOAP allow characters to behave in specific ways that correlate to how they feel or what would most benefit them. For example, let's say we have a character whose favorite sports team just lost. This character would be sad and we can use GOAP to have them act sad, such as placing a rain cloud above their head and have them move around slouching over. As another example, let's say one of our characters needs to go shopping at a specific time. We can have a GOAP setup to have them act normally, but the moment that time comes, they head to the store.
 
-We can also combine these two scenarios. Let's say this character needs to go to the store but they are also sad. The GOB will determine how they act. If they are too sad to go to the store, they might choose to not go despite the fact that they made plans to go. If they end up going to the store anyway, they might still act sad while at the store. These examples are very basic ideas for GOBs that probably don't need GOB implementation to pull off, but in scenarios where a character might have 50 or so goals, it will be incredibly helpful to implement this concept.
+We can also combine these two scenarios. Let's say this character needs to go to the store but they are also sad. The GOAP will determine how they act. If they are too sad to go to the store, they might choose to not go despite the fact that they made plans to go. If they end up going to the store anyway, they might still act sad while at the store. These examples are very basic ideas for GOAP that probably don't need GOAP implementation to pull off, but in scenarios where a character might have 50 or so goals, it will be incredibly helpful to implement this concept.
 
-GOBs allow for characters to have multiple goals and behaviors and iterate between them to determine what goals are most beneficial to them, what goals are possible for them to do, or how they should act based on how they feel. 
+GOAP allow for characters to have multiple goals and behaviors and iterate between them to determine what goals are most beneficial to them, what goals are possible for them to do, or how they should act based on how they feel. 
 
-## How do GOBs function?
+## How do GOAP function?
 
-GOBs have a list of goals and actions that the character can perform and we assign each goal an action that will satisfy that goal, then we perform the actions in order to satisfy the goals. In order to determine which action to perform first, we can use weights in order to determine which goal the character is most interested in satisfying.
+GOAP have a list of goals and actions that the character can perform and we assign each goal an action that will satisfy that goal, then we perform the actions in order to satisfy the goals. In order to determine which action to perform first, we can use weights in order to determine which goal the character is most interested in satisfying.
 
 Let's take the above example of a sad person that needs to go to the store to do some shopping. This character has two goals: go shopping and pout. That character had already made plans to go shopping so we should already have set the weight of this goal, let's say it's 3 (on a scale from 1-5). Let's say the character's sadness isn't that serious. We can assign a weight of 1 to the goal of pouting. Since the character's shopping goal has a higher weight than the character's pouting goal, we prioritize sending the character to the store to go shopping over having them pout.
 
