@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
 
     public bool atGoal = false;
     public bool kicked = false;
+    public bool restart = false;
 
     float waitTimeForKick = 1.0f;
 
@@ -27,17 +29,26 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(!atGoal) transform.position += (playerGoal - transform.position).normalized * 5 * Time.deltaTime;
+        DoGOAP();
 
-        if(Round(transform.position.x) == Round(playerGoal.x) && Round(transform.position.z) == Round(playerGoal.z)) atGoal = true;
-
-        if(atGoal && !kicked)
-        {
-            StartCoroutine(Kick());
-        }
+        if (ball.transform.position.z <= -11) StartCoroutine(Restart());
     }
 
-    IEnumerator Kick()
+    void DoGOAP()
+    {
+        if (!atGoal) MoveTowardBall();
+        if (atGoal && !kicked) StartCoroutine(KickBall());
+    }
+
+    void MoveTowardBall()
+    {
+        transform.position += (playerGoal - transform.position).normalized * 5 * Time.deltaTime;
+
+        if (Round(transform.position.x) == Round(playerGoal.x) && Round(transform.position.z) == Round(playerGoal.z))
+            atGoal = true;
+    }
+
+    IEnumerator KickBall()
     {
         vector = goal.transform.position - ball.transform.position;
         yield return new WaitForSeconds(waitTimeForKick);
@@ -49,5 +60,12 @@ public class Player : MonoBehaviour
     float Round(float x)
     {
         return Mathf.Round(x * 100f) * 0.01f;
+    }
+
+    IEnumerator Restart()
+    {
+        restart = true;
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene("MainScene");
     }
 }
